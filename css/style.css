@@ -31,7 +31,7 @@ body {
     font-weight: normal;
     color: var(--text-color);
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .hero h1 {
@@ -74,7 +74,6 @@ body {
 }
 
 .hero-bottom {
-    position: absolute;
     margin: 0;
     left: 90px;
     right: 90px;
@@ -98,4 +97,52 @@ body {
     font-size: 30px;
     font-weight: normal;
     text-align: right;
+}
+
+.projet-button {
+    margin-top: 20px;
+    height: 70px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--element-primary);
+    border-radius: 100px;
+    border: none;
+    gap: 20px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.projet-button p {
+    font-family: newsreader;
+    font-size: 24px;
+    font-weight: normal;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.circle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.circle-button svg {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.projet-button:hover p {
+    transform: translateX(-2px);
+}
+
+.projet-button:hover .circle-button {
+    transform: translateX(2px) scale(1.15); 
+}
+
+.projet-button:hover .circle-button svg {
+    transform: translateX(2px) rotate(15deg);
 }
