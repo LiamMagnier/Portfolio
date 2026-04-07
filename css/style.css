@@ -18,6 +18,34 @@ body {
     background-color: var(--background-color);
 }
 
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
+
+.navbar-left {
+    background-color: rgba(26, 26, 26, 0.7);
+    width: 530px ;
+    height: 60px;
+    border-radius: 25px;
+    margin-right: 20px;
+    border: 2px solid rgba(233, 232, 229, 0.35);
+
+}
+
+.navbar-right {
+    background-color: rgba(26, 26, 26, 0.7);
+    width: 60px ;
+    height: 60px;
+    border-radius: 25px;
+    border: 2px solid rgba(233, 232, 229, 0.35);
+}
+
 .hero {
     margin-top: 90px;
     margin-bottom: 90px;
