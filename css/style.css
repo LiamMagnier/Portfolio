@@ -38,6 +38,13 @@ body {
 
 }
 
+.image-navbar img {
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
 .navbar-right {
     background-color: rgba(26, 26, 26, 0.7);
     width: 60px ;
