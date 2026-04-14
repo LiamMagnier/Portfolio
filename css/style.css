@@ -1,8 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+
 :root {
     --background-color : #FAF9F6 ;
     --text-color : #000000 ; 
     --text-accent-color : #CDB7A5 ;
     --element-primary : #E9E8E5 ; 
+    --element-secondary : #E0DFDC ;
     --text-color-invert : #FFFFFF ;
 }
 
@@ -28,6 +34,7 @@ body {
     left: 50%;
     bottom: 20px;
     transform: translateX(-50%);
+    z-index: 1;
 }
 
 .navbar-left {
@@ -53,8 +60,8 @@ body {
 
 .image-navbar img {
     padding: 10px;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 25px;
 }
 
@@ -242,10 +249,104 @@ body {
     font-family: newsreader;
     font-size: 36px;
     font-weight: bold;
+    color: var(--text-color);
 }
+
 .bento-bg {
     width: 100%;
-    height: 700px;
+    min-height: 700px;
     background-color: var(--element-primary);
     border-radius: 50px;
+    padding: 20px;
 }
+
+.bento-bg .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: 210px 90px 320px;  
+    gap: 20px;
+}
+
+.b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .b9 {
+    background-color: var(--text-color-invert); 
+    border-radius: 30px;
+    padding: 20px;
+ 
+    width: 100%;
+    height: 100%;
+}
+
+.b1 { 
+    grid-column: span 4;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+ } 
+.b2 { 
+
+    padding: 10px 10px 10px 10px;
+    grid-column: span 3;
+} 
+.b3 { 
+    grid-column: span 5; 
+    grid-row: span 2;       
+} 
+
+
+.b4 { grid-column: span 1; } 
+.b5 { grid-column: span 1; } 
+.b6 { grid-column: span 1; } 
+.b7 { grid-column: span 4; } 
+
+
+.b8 { grid-column: span 6; } 
+.b9 { grid-column: span 6; } 
+
+
+.b1 p {
+    margin: 5px 0 5px 10px;
+    font-family: newsreader;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.WIP-B1 {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    background-color: var(--element-secondary);
+    border-radius: 20px;
+}
+
+.WIP-B1 p {
+    margin: 0;
+    font-family: inter;
+    font-weight: 500;
+    font-size: 36px;
+    color: var(--text-color);
+}
+
+.Map-B2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--element-secondary);
+    border-radius: 20px;
+}
+
+.Map-B2 img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.Map-B2 img:hover {
+    filter: grayscale(0%);
+}
+
