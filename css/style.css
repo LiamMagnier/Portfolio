@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+ 
 }
 
 
@@ -25,6 +26,7 @@
 
 body {
     background-color: var(--background-color);
+    margin-bottom: 100px;
 }
 
 .navbar {
@@ -290,7 +292,15 @@ body {
 } 
 .b3 { 
     grid-column: span 5; 
-    grid-row: span 2;       
+    grid-row: span 2;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
 } 
 
 
@@ -359,12 +369,78 @@ body {
     filter: grayscale(0%);
 }
 
+.b3 .svg-book{
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+.b3 h1{
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    font-size: 24px;
+    font-family: newsreader;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.b3 p{
+    position: relative;
+    z-index: 2;
+    margin: 0 ;
+    font-size: 16px;
+    font-family: inter;
+    color: var(--text-accent-color);
+}
+
+
+.b3 .bg-b3 {
+    margin: 0;
+    position: absolute;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    z-index: 1;
+    height: 45%;
+    background: linear-gradient(0deg, rgba(244, 243, 241, 0.75) 0%, rgba(244, 243, 241, 0.26) 100%);
+    filter: blur(15px);
+    backdrop-filter: blur(20px);
+    pointer-events: none;
+}
+
+.news-1, .news-2, .news-3 {
+    position: absolute;
+    top: 20px;
+    z-index: 0;
+    width: 36%;
+    height: 85%;
+    background-color: var(--element-primary);
+    box-shadow: inset 0 0 0 2px rgba(205, 183, 165, 0.05);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.news-1 {
+    left: 20px;
+}
+
+.news-2 {
+    left: calc(36% + 40px);
+}
+
+.news-3 {
+    left: calc((36% * 2) + 60px);
+}
+
+
 .b4-x {
     max-width: 50px;
     max-height: 50px;
     filter: grayscale(100%);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .b5-figma img{
@@ -374,26 +450,31 @@ body {
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .b4:hover .b4-x {
     filter: grayscale(0%);
+    transform: translateY(-3px);
 }
 
 .b5:hover .b5-figma img{
     filter: grayscale(0%);
+    transform: translateY(-3px);
 }
 
-.b6-youtube img{
+.b6-github img{
     max-width: 50px;
     max-height: 50px;
     filter: grayscale(100%);
     transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.b6:hover .b6-youtube img{
+.b6:hover .b6-github img{
     filter: grayscale(0%);
+    transform: translateY(-3px);
 }
 
 .b7 {
@@ -419,5 +500,77 @@ body {
 
 .b7:hover p {
     transform: translateX(2px);
+}
+
+
+.Projects-nav {
+    display: flex;
+    align-items: flex-start;
+}
+
+.Projects-nav h1 {
+    font-size: 36px;
+    margin-top: 60px;
+    margin-left: 90px;
+    margin-right: 20px;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.Projects-nav .circle-button {
+    margin-top: 60px;
+}
+
+.projects {
+    margin-left: 90px;
+    margin-right: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+
+}
+
+.p1 , .p2 , .p3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 430.67px;
+    height: 300px;
+    padding: 10px;
+    background-color: var(--element-primary);
+    border-radius: 50px;
+}
+
+.p1:hover , .p2:hover , .p3:hover {
+    padding-bottom: 40px;
+}
+
+.Projects-nav:hover .circle-button {
+    transform: translateX(2px) scale(1.15); 
+}
+
+.Projects-nav:hover .circle-button svg {
+    transform: translateX(2px) rotate(15deg);
+}
+
+.Projects-nav:hover h1 {
+    transform: translateX(2px);
+}
+
+.img-p1 , .img-p2 , .img-p3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-wp);
+    border-radius: 40px;
+}
+
+.img-p1 , .img-p2 , .img-p3 p {
+    font-size: 36px;
+    font-weight: bold;
 }
 
